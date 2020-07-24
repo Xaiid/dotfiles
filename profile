@@ -5,6 +5,7 @@ set completion-query-items 350
 # create big history file
 export HISTSIZE=20000
 export HISTFILESIZE=20000
+export PATH=~/.local/bin:$PATH
 
 # Now bash writes and re-reads the history file every time it prints a new prompt for you.
 export PROMPT_COMMAND="history -a ; history -n;  ${PROMPT_COMMAND}"
@@ -96,19 +97,36 @@ USER_COLOR='\033[0;105m'  # Purple
 BRANCH_COLOR='\033[47m'
 BLACK='\033[0;105m'  # Purple
 
+#export PS1="$PROMPT_COLOR\u ⮁ \h $USER_INFO_ARROW$DIRECTORY_COLOR \W $DIRECTORY_ARROW$BRANCH_COLOR ⭠ \$(parse_git_branch) $ARROW_BRANCH\n$PROMPT_COLOR\$$BLACK "
 export PS1="$USER_COLOR\u :: $DIRECTORY_COLOR\W$BRANCH_COLOR\$(parse_git_branch) $DIRECTORY_COLOR$ $BLACK"
-
-export PATH=$PATH:~/.dotfiles/bin
-
-# set editor for gem open
+export PATH=$PATH:~/.gh-dotfiles/bin
 export EDITOR=vim
-
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-
-alias b="bundle exec"
-alias v="vim"
+export PATH=$PATH:~/.dotfiles/bin
+export TERM=xterm-256color
 
 bind -f ~/.dotfiles/history_search
+source ~/.gh-dotfiles/bash_git
+source ~/.gh-dotfiles/task_completion.sh
 
-export TERM=xterm-256color
+# add short cut keys for terminal app
+# Ctrl left   right word
+# Ctrl right  forward word
+# up          history search backward
+# down        history search forward
+bind -f ~/.gh-dotfiles/bash_bindings
+
+alias v="gvim"
+alias t="task"
+alias b="bundle exec"
+alias v="vim"
+alias single='git config --global user.name "Jeaneth Farmer" ; git config --global user.email "xaid27@gmail.com" '
+
+export CINNAMONDB=cinnamon
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+eval "$(rbenv init -)"
+export PATH="/usr/local/opt/postgresql@9.4/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/bin/python:$PATH"
