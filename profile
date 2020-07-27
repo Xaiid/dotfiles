@@ -1,105 +1,14 @@
 set match-hidden-files off
 set page-completions off
 set completion-query-items 350
-
-# create big history file
 export HISTSIZE=20000
 export HISTFILESIZE=20000
 export PATH=~/.local/bin:$PATH
-
-# Now bash writes and re-reads the history file every time it prints a new prompt for you.
 export PROMPT_COMMAND="history -a ; history -n;  ${PROMPT_COMMAND}"
-
 shopt -s histappend
-# don't put duplicate lines in the history and ignore same sucessive entries.
 export HISTCONTROL=ignoreboth
-
-# GIT ------------------------------------
-# show current branch on shell
 source ~/.dotfiles/bash_git
-
-Color_Off='\033[0m'       # Text Reset
-
-# Regular Colors
-Black='\033[0;30m'        # Black
-Red='\033[0;31m'          # Red
-Green='\033[0;32m'        # Green
-Yellow='\033[0;33m'       # Yellow
-Blue='\033[0;34m'         # Blue
-Purple='\033[0;35m'       # Purple
-Cyan='\033[0;36m'         # Cyan
-White='\033[0;37m'        # White
-
-# Bold
-BBlack='\033[1;30m'       # Black
-BRed='\033[1;31m'         # Red
-BGreen='\033[1;32m'       # Green
-BYellow='\033[1;33m'      # Yellow
-BBlue='\033[1;34m'        # Blue
-BPurple='\033[1;35m'      # Purple
-BCyan='\033[1;36m'        # Cyan
-BWhite='\033[1;37m'       # White
-
-# Underline
-UBlack='\033[4;30m'       # Black
-URed='\033[4;31m'         # Red
-UGreen='\033[4;32m'       # Green
-UYellow='\033[4;33m'      # Yellow
-UBlue='\033[4;34m'        # Blue
-UPurple='\033[4;35m'      # Purple
-UCyan='\033[4;36m'        # Cyan
-UWhite='\033[4;37m'       # White
-
-# Background
-On_Black='\033[40m'       # Black
-On_Red='\033[41m'         # Red
-On_Green='\033[42m'       # Green
-On_Yellow='\033[43m'      # Yellow
-On_Blue='\033[44m'        # Blue
-On_Purple='\033[45m'      # Purple
-On_Cyan='\033[46m'        # Cyan
-On_White='\033[47m'       # White
-
-# High Intensity
-IBlack='\033[0;90m'       # Black
-IRed='\033[0;91m'         # Red
-IGreen='\033[0;92m'       # Green
-IYellow='\033[0;93m'      # Yellow
-IBlue='\033[0;94m'        # Blue
-IPurple='\033[0;95m'      # Purple
-ICyan='\033[0;96m'        # Cyan
-IWhite='\033[0;97m'       # White
-
-# Bold High Intensity
-BIBlack='\033[1;90m'      # Black
-BIRed='\033[1;91m'        # Red
-BIGreen='\033[1;92m'      # Green
-BIYellow='\033[1;93m'     # Yellow
-BIBlue='\033[1;94m'       # Blue
-BIPurple='\033[1;95m'     # Purple
-BICyan='\033[1;96m'       # Cyan
-BIWhite='\033[1;97m'      # White
-
-# High Intensity backgrounds
-On_IBlack='\033[0;100m'   # Black
-On_IRed='\033[0;101m'     # Red
-On_IGreen='\033[0;102m'   # Green
-On_IYellow='\033[0;103m'  # Yellow
-On_IBlue='\033[0;104m'    # Blue
-On_IPurple='\033[0;105m'  # Purple
-On_ICyan='\033[0;106m'    # Cyan
-On_IWhite='\033[0;107m'   # White
-
-DIRECTORY_COLOR='\033[4;34m'
-USER_COLOR='\033[0;106m'    # Cyan
-USER_COLOR='\033[0;35m'       # Purple
-USER_COLOR='\033[0;105m'  # Purple
-BRANCH_COLOR='\033[47m'
-BLACK='\033[0;105m'  # Purple
-
-#export PS1="$PROMPT_COLOR\u ⮁ \h $USER_INFO_ARROW$DIRECTORY_COLOR \W $DIRECTORY_ARROW$BRANCH_COLOR ⭠ \$(parse_git_branch) $ARROW_BRANCH\n$PROMPT_COLOR\$$BLACK "
-export PS1="$USER_COLOR\u :: $DIRECTORY_COLOR\W$BRANCH_COLOR\$(parse_git_branch) $DIRECTORY_COLOR$ $BLACK"
-export PATH=$PATH:~/.gh-dotfiles/bin
+export PATH=$PATH:~/.dotfiles/bin
 export EDITOR=vim
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -107,22 +16,14 @@ export PATH=$PATH:~/.dotfiles/bin
 export TERM=xterm-256color
 
 bind -f ~/.dotfiles/history_search
-source ~/.gh-dotfiles/bash_git
-source ~/.gh-dotfiles/task_completion.sh
-
-# add short cut keys for terminal app
-# Ctrl left   right word
-# Ctrl right  forward word
-# up          history search backward
-# down        history search forward
-bind -f ~/.gh-dotfiles/bash_bindings
-
+source ~/.dotfiles/task_completion.sh
+bind -f ~/dotfiles/bash_bindings
 alias v="gvim"
+alias ga="git add"
 alias t="task"
 alias b="bundle exec"
 alias v="vim"
 alias single='git config --global user.name "Jeaneth Farmer" ; git config --global user.email "xaid27@gmail.com" '
-
 export CINNAMONDB=cinnamon
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
@@ -130,3 +31,4 @@ eval "$(rbenv init -)"
 export PATH="/usr/local/opt/postgresql@9.4/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/bin/python:$PATH"
+:w

@@ -13,9 +13,8 @@ function parse_git_branch {
 }
 fi
 
-source ~/.dotfiles/bash_git_completion
-
 alias gs='git status'
+alias ga='git add'
 alias gco='git checkout '
 alias gb='git branch'
 alias gd="git diff"
