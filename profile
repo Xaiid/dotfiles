@@ -60,5 +60,3 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/bin/python:$PATH"
 export NVM_DIR="/Users/infobip/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-git config --global user.name "Jeaneth Farmer" ; git config --global user.email "xaid27@gmail.com"
