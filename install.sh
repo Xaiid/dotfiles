@@ -1,9 +1,5 @@
 git submodule init
 git submodule update
 
-vim +BundleInstall +qall
-
-echo source ~/.dotfiles/profile            >> ~/.profile
-echo source ~/.dotfiles/profile            >> ~/.bashrc
-echo source ~/.dotfiles/profile            >> ~/.my-profile
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo source ~/.my-profile>> ~/.zshrc
