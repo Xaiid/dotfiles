@@ -51,7 +51,6 @@ export HISTFILESIZE=20000
 export PATH=~/.local/bin:$PATH
 export PROMPT_COMMAND="history -a ; history -n;  ${PROMPT_COMMAND}"
 export HISTCONTROL=ignoreboth
-source ~/.dotfiles/bash_git
 export PATH=$PATH:~/.dotfiles/bin
 export TERM=xterm-256color
 export CINNAMONDB=cinnamon
