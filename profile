@@ -20,7 +20,6 @@
 # export LANG=en_US.UTF-8
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-# Example aliases
 #shopt -s histappend
 ZSH_ALIAS_FINDER_AUTOMATIC=true
 plugins=(git)
@@ -41,7 +40,7 @@ alias gb='git branch'
 alias gd="git diff"
 alias gg="git grep --color -n"
 alias gk="gitk 2>/dev/null --all &"
-alias single='git config --global user.name "Jeaneth Farmer" ; git config --global user.email "xaid27@gmail.com" '
+alias single='git config --global user.name "Jeaneth Farmer" ; git config --global user.email "xaid27@gmail.com"'
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="/Users/infobip/.oh-my-zsh"
@@ -62,4 +61,4 @@ export PATH="/usr/bin/python:$PATH"
 export NVM_DIR="/Users/infobip/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-single
+git config --global user.name "Jeaneth Farmer" ; git config --global user.email "xaid27@gmail.com"
