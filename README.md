@@ -4,4 +4,4 @@
 
 # Install personal aliases
 
-`source ./install.sh`
+`source source ~/dotfiles/install.sh`
